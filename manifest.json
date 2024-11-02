@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "LinkedIn to Airtable",
+  "version": "1.0",
+  "description": "Scrape LinkedIn profiles and save to Airtable",
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "https://*.linkedin.com/*",
+    "https://api.airtable.com/*"
+  ],
+  "action": {},
+  "options_page": "options.html",
+  "content_scripts": [
+    {
+      "matches": ["https://*.linkedin.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
+}
